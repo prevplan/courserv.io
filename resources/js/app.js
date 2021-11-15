@@ -7,3 +7,5 @@ Alpine.start()
 import * as Turbo from "@hotwired/turbo"
 
 import 'livewire-turbolinks'
+
+import 'friendly-challenge/widget'

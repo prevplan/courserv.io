@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'fcaptcha' => [
+        'secret' => env('FRIENDLY_CAPTCHA_SECRET'),
+        'sitekey' => env('FRIENDLY_CAPTCHA_SITEKEY'),
+    ],
 ];

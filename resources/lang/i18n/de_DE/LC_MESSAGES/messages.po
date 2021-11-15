@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: courserv.io\n"
+"POT-Creation-Date: 2021-11-18 20:13+0100\n"
+"PO-Revision-Date: 2021-11-18 20:13+0100\n"
+"Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
+"Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-KeywordsList: _;__;_i;_s;gettext;_n:1,2;ngettext:1,2;dgettext:2\n"
+"X-Poedit-Basepath: ../../../../../app\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: Http\n"
+"X-Poedit-SearchPath-1: ../resources/views\n"
+"X-Poedit-SearchPath-2: Console\n"
+"X-Poedit-SearchPath-3: ../storage/framework/messages\n"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:7
+msgid "Log in to your account"
+msgstr "Melden Sie sich an Ihrem Konto an"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:16
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:24
+msgid "Email address"
+msgstr "E-Mail Adresse"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:37
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:45
+msgid "Password"
+msgstr "Passwort"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:63
+msgid "Remember me"
+msgstr "Angemeldet bleiben"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:70
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+#: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:95
+msgid "Log in"
+msgstr "Anmelden"
+
+#: ../storage/framework/messages/5a89f90a285dee02267dd4675ba69a6994502217.php.php:6
+msgid "Login"
+msgstr "Login"
+
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:57
+#: Http/Livewire/Auth/Login.php:57
+#, php-format
+msgid "Too many login attempts. Please try again in a second."
+msgid_plural "Too many login attempts. Please try again in %s seconds."
+msgstr[0] ""
+"Zu viele Anmeldeversuche. Bitte versuchen Sie es in einer Sekunde erneut."
+msgstr[1] ""
+"Zu viele Anmeldeversuche. Bitte versuchen Sie es in %s Sekunden erneut."
+
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:64
+#: Http/Livewire/Auth/Login.php:64
+msgid "Captcha not solved!"
+msgstr "Captcha nicht gelöst!"
+
+#~ msgid "This combination of credentials was not found in our database."
+#~ msgstr ""
+#~ "Diese Kombination von Zugangsdaten wurde nicht in unserer Datenbank "
+#~ "gefunden."
+
+#, php-format
+#~ msgid "Please wait a second before retrying."
+#~ msgid_plural "Please wait %s seconds before retrying."
+#~ msgstr[0] "Bitte warten Sie eine Sekunde, bevor Sie es erneut versuchen."
+#~ msgstr[1] "Bitte warten Sie %s Sekunden, bevor Sie es erneut versuchen."
