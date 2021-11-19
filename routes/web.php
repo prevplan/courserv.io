@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', '\App\Http\Middleware\Localization' ]
     ], function()
 {
     Route::get('/', function () {
