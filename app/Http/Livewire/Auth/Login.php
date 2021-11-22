@@ -23,8 +23,6 @@ class Login extends Component
 
     public $solved = false;
 
-    public $title = 'Test';
-
     protected $rules = [
         'email' => 'required|email',
         'password' => 'required'
@@ -80,6 +78,6 @@ class Login extends Component
     public function render()
     {
         return view('livewire.auth.login')
-            ->layout('layouts.auth', ['title' => 'Login']);
+            ->layout('layouts.auth', ['metaTitle' => 'Login']);
     }
 }

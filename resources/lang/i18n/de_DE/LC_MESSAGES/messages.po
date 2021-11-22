@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: courserv.io\n"
-"POT-Creation-Date: 2021-11-18 20:13+0100\n"
-"PO-Revision-Date: 2021-11-18 20:13+0100\n"
+"POT-Creation-Date: 2021-11-21 18:30+0100\n"
+"PO-Revision-Date: 2021-11-21 18:31+0100\n"
 "Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language: de_DE\n"
@@ -45,12 +45,12 @@ msgstr "Passwort vergessen?"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ../storage/framework/messages/5a89f90a285dee02267dd4675ba69a6994502217.php.php:6
-msgid "Login"
-msgstr "Login"
+#: ../storage/framework/messages/9717429c8fcb31b54f69d45da155411403da3bcf.php.php:2
+msgid "Logout"
+msgstr "Ausloggen"
 
-#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:57
-#: Http/Livewire/Auth/Login.php:57
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:55
+#: Http/Livewire/Auth/Login.php:55
 #, php-format
 msgid "Too many login attempts. Please try again in a second."
 msgid_plural "Too many login attempts. Please try again in %s seconds."
@@ -59,10 +59,13 @@ msgstr[0] ""
 msgstr[1] ""
 "Zu viele Anmeldeversuche. Bitte versuchen Sie es in %s Sekunden erneut."
 
-#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:64
-#: Http/Livewire/Auth/Login.php:64
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:62
+#: Http/Livewire/Auth/Login.php:62
 msgid "Captcha not solved!"
 msgstr "Captcha nicht gelöst!"
+
+#~ msgid "Login"
+#~ msgstr "Login"
 
 #~ msgid "This combination of credentials was not found in our database."
 #~ msgstr ""

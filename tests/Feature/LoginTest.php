@@ -90,3 +90,26 @@ it('can login', function () {
     $this->assertEquals('test@example.com', auth()->user()->email);
 });
 
+it('can logout', function () {
+    User::create([
+        'name' => 'Example',
+        'email' => 'test@example.com',
+        'password' => Hash::make('password'),
+    ]);
+
+    Livewire::test('auth.login')
+        ->set('email', 'test@example.com')
+        ->set('password', 'password')
+        ->emit('captchaSolved')
+        ->call('login')
+        ->assertRedirect(route('home'));
+
+    $this->assertEquals('test@example.com', auth()->user()->email);
+
+    Livewire::test('auth.logout')
+        ->call('logout')
+        ->assertRedirect('/');
+
+    $this->assertTrue(auth()->guest());
+});
+

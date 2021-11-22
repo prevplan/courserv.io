@@ -21,8 +21,13 @@ Route::group(
 {
     Route::get('/', function () {
         return view('welcome');
-    })->name('home');
+    });
 
     Route::get('login', \App\Http\Livewire\Auth\Login::class)
-        ->name('auth.login');
+        ->middleware('guest')
+        ->name('login');
+
+    Route::get('home', \App\Http\Livewire\Home::class)
+        ->middleware('auth')
+        ->name('home');
 });

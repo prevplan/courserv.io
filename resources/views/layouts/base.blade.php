@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>{{ $attributes['title'] }} | {{ config('app.name') }}</title>
+    <title>{{ $attributes['metaTitle'] }} | {{ config('app.name') }}</title>
 
     @livewireStyles
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,5 +25,6 @@
         })
 
     </script>
+    <livewire:auth.logout />
 </body>
 </html>

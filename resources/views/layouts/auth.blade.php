@@ -1,4 +1,4 @@
-<x-layouts.base title="{{ _i('Login') }}">
+<x-layouts.base :metaTitle="$metaTitle">
 
     {{ $slot }}
 
