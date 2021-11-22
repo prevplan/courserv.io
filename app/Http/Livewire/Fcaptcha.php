@@ -7,8 +7,14 @@ use Livewire\Component;
 
 class Fcaptcha extends Component
 {
+    /**
+     * @var bool
+     */
     public $solved = false;
 
+    /**
+     * @var string[]
+     */
     protected $listeners = ['captchaSolved', 'removeCaptcha'];
 
     public function removeCaptcha()

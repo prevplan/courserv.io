@@ -1,0 +1,67 @@
+name: run-tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.0]
+        laravel: [8.*]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: 8.*
+            testbench: ^6.6
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+
+    env:
+      extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+    steps:
+      -   uses: actions/checkout@v2
+
+      -   name: Setup cache environment
+          id: extcache
+          uses: shivammathur/cache-extensions@v1
+          with:
+            php-version: '8.0'
+            extensions: ${{ env.extensions }}
+            key: extensions-${{ hashFiles('composer.lock') }}
+
+      -   name: Cache extensions
+          uses: actions/cache@v2
+          with:
+            path: ${{ steps.extcache.outputs.dir }}
+            key: ${{ steps.extcache.outputs.key }}
+            restore-keys: ${{ steps.extcache.outputs.key }}
+
+      -   name: Setup PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: ${{ matrix.php }}
+            extensions: ${{ env.extensions }}
+            coverage: none
+
+      -   name: Cache composer dependencies
+          uses: actions/cache@v2
+          with:
+            path: vendor
+            key: composer-${{ hashFiles('composer.lock') }}
+
+      -   name: Run composer install
+          run: composer install -n --prefer-dist
+
+      -   name: Prepare Laravel Application
+          run: |
+            cp .env.ci .env
+            php artisan key:generate
+
+      -   name: Run Pest
+          run: vendor/bin/pest
