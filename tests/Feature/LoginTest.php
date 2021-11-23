@@ -3,8 +3,6 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
-use Mcamara\LaravelLocalization\LaravelLocalization;
-
 
 it('has login page', function () {
     $response = $this->get('/login');
@@ -70,7 +68,6 @@ it('get blocked after 3 failed login tries', function () {
         ->call('login')
         ->assertHasErrors('captcha')
         ->assertSee('Too many login attempts.');
-
 });
 
 it('can login', function () {
@@ -112,4 +109,3 @@ it('can logout', function () {
 
     $this->assertTrue(auth()->guest());
 });
-

@@ -36,11 +36,12 @@ class Fcaptcha extends Component
             'sitekey' => config('services.fcaptcha.sitekey'),
         ]);
 
-        if (!$response->json('success')) {
+        if (! $response->json('success')) {
             foreach ($response->json('errors') as $error) {
                 $this->addError('validation', $error); //ddd($response->json('errors'));
             }
             $this->emit('resetCaptcha');
+
             return;
         }
 

@@ -20,6 +20,7 @@ class Localization
     {
         $locale = LaravelLocalization::getCurrentLocaleRegional();
         LaravelGettext::setLocale($locale);
+
         return $next($request);
     }
 }

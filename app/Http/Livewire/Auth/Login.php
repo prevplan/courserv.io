@@ -5,7 +5,6 @@ namespace App\Http\Livewire\Auth;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Login extends Component
@@ -25,7 +24,7 @@ class Login extends Component
 
     protected $rules = [
         'email' => 'required|email',
-        'password' => 'required'
+        'password' => 'required',
     ];
 
     protected $listeners = ['captchaSolved'];
@@ -46,7 +45,6 @@ class Login extends Component
 
     public function login()
     {
-
         $this->validate();
 
         try {
@@ -57,14 +55,14 @@ class Login extends Component
             return;
         }
 
-        if (!$this->solved) {
+        if (! $this->solved) {
             $this->emit('resetCaptcha');
             $this->addError('captcha', _i('Captcha not solved!'));
 
             return;
         }
 
-        if (!Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+        if (! Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             $this->addError('email', trans('auth.failed'));
 
             return;
