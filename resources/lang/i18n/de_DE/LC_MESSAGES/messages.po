@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: courserv.io\n"
-"POT-Creation-Date: 2021-11-21 18:30+0100\n"
-"PO-Revision-Date: 2021-11-21 18:31+0100\n"
+"POT-Creation-Date: 2021-11-25 19:40+0100\n"
+"PO-Revision-Date: 2021-11-25 19:41+0100\n"
 "Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language: de_DE\n"
@@ -18,6 +18,11 @@ msgstr ""
 "X-Poedit-SearchPath-1: ../resources/views\n"
 "X-Poedit-SearchPath-2: Console\n"
 "X-Poedit-SearchPath-3: ../storage/framework/messages\n"
+
+#: ../storage/framework/messages/08de3515490169fd494be5c5c10664bedd1857b9.php.php:23
+#: ../storage/framework/messages/febdfe4aafa34922ab49c3e6352e4516505dee45.php.php:23
+msgid "create"
+msgstr "erstellen"
 
 #: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:7
 msgid "Log in to your account"
@@ -45,12 +50,12 @@ msgstr "Passwort vergessen?"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ../storage/framework/messages/9717429c8fcb31b54f69d45da155411403da3bcf.php.php:2
+#: ../storage/framework/messages/97d6415312f250d42d6bb79c2cf2d967619d00dc.php.php:265
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:55
-#: Http/Livewire/Auth/Login.php:55
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:53
+#: Http/Livewire/Auth/Login.php:53
 #, php-format
 msgid "Too many login attempts. Please try again in a second."
 msgid_plural "Too many login attempts. Please try again in %s seconds."
@@ -59,8 +64,8 @@ msgstr[0] ""
 msgstr[1] ""
 "Zu viele Anmeldeversuche. Bitte versuchen Sie es in %s Sekunden erneut."
 
-#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:62
-#: Http/Livewire/Auth/Login.php:62
+#: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:60
+#: Http/Livewire/Auth/Login.php:60
 msgid "Captcha not solved!"
 msgstr "Captcha nicht gelöst!"
 

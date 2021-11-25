@@ -80,13 +80,9 @@
                 </div>
                 <div class="mt-5 flex-1 h-0 overflow-y-auto">
                     <nav class="px-2 space-y-1">
-                        <x-sidebar active="true" fa="home">
-                            Dashboard
-                        </x-sidebar>
+                        <x-nav.home :active="$active" />
 
-                        <x-sidebar fa="users">
-                            Team
-                        </x-sidebar>
+                        <x-nav.teams :active="$active" />
 
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
                             {{-- Heroicon name: outline/folder --}}
@@ -137,13 +133,9 @@
                 </div>
                 <div class="mt-5 flex-grow flex flex-col">
                     <nav class="flex-1 px-2 pb-4 space-y-1">
-                        <x-sidebar-static active="true" fa="home">
-                            Dashboard
-                        </x-sidebar-static>
+                        <x-nav.home-static :active="$active" />
 
-                        <x-sidebar-static fa="users">
-                            Team
-                        </x-sidebar-static>
+                        <x-nav.teams-static :active="$active" />
 
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                             {{-- Heroicon name: outline/folder --}}
