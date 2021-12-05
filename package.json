@@ -24,7 +24,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "@hotwired/turbo": "^7.0.1",
+        "@hotwired/turbo": "^7.1.0",
         "@tailwindcss/forms": "^0.3.4",
         "alpinejs": "^3.5.1",
         "friendly-challenge": "^0.9.0",
