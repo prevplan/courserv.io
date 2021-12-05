@@ -77,6 +77,7 @@ class TeamPolicy
         if ($user->isAbleTo('team.update') || $user->isAbleTo('team.update', $team)) {
             return true;
         }
+
         return false;
     }
 
