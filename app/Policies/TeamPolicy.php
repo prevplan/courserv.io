@@ -23,12 +23,13 @@ class TeamPolicy
      */
     public function viewAny(User $user)
     {
-        if (!$user->isAbleTo('team.*')) {
+        if (! $user->isAbleTo('team.*')) {
             foreach ($user->teams()->pluck('id') as $team_id) {
                 if ($user->isAbleTo('team.*', $team_id)) {
                     return true;
                 }
             }
+
             return false;
         }
 

@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
 use function Pest\Laravel\actingAs;
 
-beforeEach(function (){
-   $this->user = User::factory()->create();
+beforeEach(function () {
+    $this->user = User::factory()->create();
 });
 
 it('has login page', function () {
@@ -91,7 +91,7 @@ it('can login', function () {
 });
 
 it('can logout', function () {
-   actingAs($this->user);
+    actingAs($this->user);
 
     $this->assertAuthenticated();
 
