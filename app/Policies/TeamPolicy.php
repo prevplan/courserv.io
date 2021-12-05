@@ -10,11 +10,6 @@ class TeamPolicy
 {
     use HandlesAuthorization;
 
-    public function __construct()
-    {
-        return false;
-    }
-
     /**
      * Determine whether the user can view any models.
      *
