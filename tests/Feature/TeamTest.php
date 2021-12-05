@@ -48,5 +48,5 @@ it('needs authorization to create a team', function () {
     Livewire::test('team')
         ->call('create')
         ->assertForbidden();
-   //    ->assertHasErrors(['password' => 'required']);
+    //    ->assertHasErrors(['password' => 'required']);
 });

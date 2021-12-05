@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Team as TeamModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
 
 class Team extends Component
@@ -22,7 +21,7 @@ class Team extends Component
         return [
             'editing.name' => 'required|unique:teams,name,' . optional($this->editing)->id,
             'editing.display_name' => 'required',
-            'editing.description' => 'nullable'
+            'editing.description' => 'nullable',
         ];
     }
 
@@ -35,7 +34,9 @@ class Team extends Component
     {
         $this->authorize('create', TeamModel::class);
 
-        if ($this->editing->getKey()) $this->editing = $this->makeBlankTeam();
+        if ($this->editing->getKey()) {
+            $this->editing = $this->makeBlankTeam();
+        }
         $this->showEditModal = true;
     }
 
@@ -43,7 +44,9 @@ class Team extends Component
     {
         $this->authorize('update', $team);
 
-        if ($this->editing->isNot($team)) $this->editing = $team;
+        if ($this->editing->isNot($team)) {
+            $this->editing = $team;
+        }
         $this->showEditModal = true;
     }
 
