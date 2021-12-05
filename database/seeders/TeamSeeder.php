@@ -17,6 +17,7 @@ class TeamSeeder extends Seeder
         Team::create([
             'name' => 'example-team',
             'display_name' => 'Example Team',
+            'description' => 'Some description about this team and whats special here...',
         ]);
     }
 }

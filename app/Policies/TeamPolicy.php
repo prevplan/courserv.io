@@ -32,6 +32,17 @@ class TeamPolicy
     }
 
     /**
+     * Determine whether the user can view every models.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function viewEvery(User $user)
+    {
+        return $user->isAbleTo('team.view');
+    }
+
+    /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
@@ -51,7 +62,7 @@ class TeamPolicy
      */
     public function create(User $user)
     {
-        return $user->isAbleTo('teams.create');
+        return $user->isAbleTo('team.create');
     }
 
     /**
@@ -63,7 +74,9 @@ class TeamPolicy
      */
     public function update(User $user, Team $team)
     {
-        //
+        if ($user->isAbleTo('team.update') || $user->isAbleTo('team.update', $team)) {
+            return true;
+        }
     }
 
     /**

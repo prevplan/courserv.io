@@ -1,3 +1,9 @@
+@props([
+    'metaTitle' => '',
+    'siteTitle',
+    'active' => '',
+])
+
 <x-layouts.base :metaTitle="$metaTitle">
     {{--
       This example requires updating your template:
@@ -82,7 +88,9 @@
                     <nav class="px-2 space-y-1">
                         <x-nav.home :active="$active" />
 
-                        <x-nav.teams :active="$active" />
+                        @can('viewAny', \App\Models\Team::class)
+                            <x-nav.teams :active="$active" />
+                        @endcan
 
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
                             {{-- Heroicon name: outline/folder --}}
@@ -135,7 +143,9 @@
                     <nav class="flex-1 px-2 pb-4 space-y-1">
                         <x-nav.home-static :active="$active" />
 
-                        <x-nav.teams-static :active="$active" />
+                        @can('viewAny', \App\Models\Team::class)
+                            <x-nav.teams-static :active="$active" />
+                        @endcan
 
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                             {{-- Heroicon name: outline/folder --}}
@@ -251,17 +261,11 @@
 
             <main class="flex-1">
                 <div class="py-6">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                        <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                    <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
+                        <h1 class="text-2xl font-semibold text-gray-900">{{ $siteTitle ?? $metaTitle }}</h1>
                     </div>
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                        {{-- Replace with your content --}}
-                        <div class="py-4">
-                            <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                                {{ $slot }}
-                            </div>
-                        </div>
-                        {{-- /End replace --}}
+                    <div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+                        {{ $slot }}
                     </div>
                 </div>
             </main>

@@ -30,4 +30,8 @@ Route::group(
     Route::get('home', \App\Http\Livewire\Home::class)
         ->middleware('auth')
         ->name('home');
+
+    Route::get('teams', \App\Http\Livewire\Team::class)
+        ->middleware('auth')
+        ->name('teams');
 });

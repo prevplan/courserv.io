@@ -21,6 +21,18 @@ class PermissionSeeder extends Seeder
             'description' => 'create new teams',
         ]);
 
+        Permission::create([
+            'name' => 'team.view',
+            'display_name' => 'View Teams',
+            'description' => 'can see the teams',
+        ]);
+
+        Permission::create([
+            'name' => 'team.update',
+            'display_name' => 'Edit Teams',
+            'description' => 'can edit a team',
+        ]);
+
         // create an administrator role as standard
         $admin = Role::create([
             'name' => 'admin',
