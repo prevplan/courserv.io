@@ -49,10 +49,10 @@ class TeamPolicy
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Team $team)
-    {
-        //
-    }
+//    public function view(User $user, Team $team)
+//    {
+//        //
+//    }
 
     /**
      * Determine whether the user can create models.
@@ -77,6 +77,7 @@ class TeamPolicy
         if ($user->isAbleTo('team.update') || $user->isAbleTo('team.update', $team)) {
             return true;
         }
+        return false;
     }
 
     /**
@@ -86,10 +87,10 @@ class TeamPolicy
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Team $team)
-    {
-        //
-    }
+//    public function delete(User $user, Team $team)
+//    {
+//        //
+//    }
 
     /**
      * Determine whether the user can restore the model.
@@ -98,10 +99,10 @@ class TeamPolicy
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Team $team)
-    {
-        //
-    }
+//    public function restore(User $user, Team $team)
+//    {
+//        //
+//    }
 
     /**
      * Determine whether the user can permanently delete the model.
@@ -110,8 +111,8 @@ class TeamPolicy
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Team $team)
-    {
-        //
-    }
+//    public function forceDelete(User $user, Team $team)
+//    {
+//        //
+//    }
 }

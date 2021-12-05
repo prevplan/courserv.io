@@ -85,6 +85,6 @@ class Team extends Component
 
     private function makeBlankTeam()
     {
-        return TeamModel::make([]);
+        return new TeamModel();
     }
 }
