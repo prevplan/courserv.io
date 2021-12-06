@@ -104,6 +104,7 @@ class Team extends Component
     protected function prepareForValidation($attributes): array
     {
         $attributes['editing']['name'] = Str::slug($this->editing->name, '-');
+
         return $attributes;
     }
 }

@@ -68,7 +68,6 @@ it('has validations', function () {
             'editing.name',
             'editing.display_name',
         ]);
-
 });
 
 it('needs a unique team name', function () {
