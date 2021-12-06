@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: courserv.io\n"
-"POT-Creation-Date: 2021-11-25 19:40+0100\n"
-"PO-Revision-Date: 2021-11-25 19:41+0100\n"
+"POT-Creation-Date: 2021-12-06 10:36+0100\n"
+"PO-Revision-Date: 2021-12-06 10:36+0100\n"
 "Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language: de_DE\n"
@@ -18,11 +18,6 @@ msgstr ""
 "X-Poedit-SearchPath-1: ../resources/views\n"
 "X-Poedit-SearchPath-2: Console\n"
 "X-Poedit-SearchPath-3: ../storage/framework/messages\n"
-
-#: ../storage/framework/messages/08de3515490169fd494be5c5c10664bedd1857b9.php.php:23
-#: ../storage/framework/messages/febdfe4aafa34922ab49c3e6352e4516505dee45.php.php:23
-msgid "create"
-msgstr "erstellen"
 
 #: ../storage/framework/messages/38ae00ebe5b54da407a37411ba7848e11704aeff.php.php:7
 msgid "Log in to your account"
@@ -50,9 +45,55 @@ msgstr "Passwort vergessen?"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ../storage/framework/messages/97d6415312f250d42d6bb79c2cf2d967619d00dc.php.php:265
+#: ../storage/framework/messages/394bbb5ae230442359a90af4b72b9744091e8a32.php.php:94
+#: Http/Livewire/Team.php:94
+msgid "Teams"
+msgstr "Teams"
+
+#: ../storage/framework/messages/97d6415312f250d42d6bb79c2cf2d967619d00dc.php.php:287
 msgid "Logout"
 msgstr "Ausloggen"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:10
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:88
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:95
+msgid "team name"
+msgstr "Teamname"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:14
+msgid "Display Name"
+msgstr "Angezeigter Name"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:18
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:182
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:191
+msgid "Description"
+msgstr "Beschreibung"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:27
+msgid "Add Team"
+msgstr "Team hinzufügen"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:82
+msgid "edit team"
+msgstr "Team bearbeiten"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:126
+msgid "The internal used team name."
+msgstr "Der intern verwendete Teamname."
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:134
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:143
+msgid "Display Team Name"
+msgstr "angezeigter Teamname"
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:174
+msgid "The displayed team name."
+msgstr "Der angezeigte Teamname."
+
+#: ../storage/framework/messages/b14c41b377bfefd7fcfebf1218d3be4a852bf145.php.php:222
+msgid "A description for this team. (optional)"
+msgstr "Eine Beschreibung für dieses Team. (optional)"
 
 #: ../storage/framework/messages/f2ab01c154fcc91634003029108681d89cd3d19b.php.php:53
 #: Http/Livewire/Auth/Login.php:53
@@ -68,6 +109,9 @@ msgstr[1] ""
 #: Http/Livewire/Auth/Login.php:60
 msgid "Captcha not solved!"
 msgstr "Captcha nicht gelöst!"
+
+#~ msgid "create"
+#~ msgstr "erstellen"
 
 #~ msgid "Login"
 #~ msgstr "Login"

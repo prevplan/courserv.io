@@ -11,7 +11,8 @@ beforeEach(function () {
     $this->seed(PermissionSeeder::class);
 
     $this->team = Team::create([
-        'name' => 'my_team',
+        'name' => 'example-team',
+        'display_name' => 'example team',
     ]);
 
     $this->teams = $this->team;
@@ -48,5 +49,34 @@ it('needs authorization to create a team', function () {
     Livewire::test('team')
         ->call('create')
         ->assertForbidden();
-    //    ->assertHasErrors(['password' => 'required']);
+});
+
+it('needs authorization to edit a team', function () {
+    $this->role = Role::find(1);
+    $this->role->detachPermission('team.update');
+
+    Livewire::test('team')
+        ->call('edit')
+        ->assertForbidden();
+});
+
+it('has validations', function () {
+    Livewire::test('team')
+        ->set('editing.name', '')
+        ->set('editing.display_name', '')
+        ->assertHasErrors([
+            'editing.name',
+            'editing.display_name',
+        ]);
+
+});
+
+it('needs a unique team name', function () {
+    Livewire::test('team')
+        ->set('editing.name', 'example-team')
+        ->set('editing.display_name', 'example team')
+        ->assertHasErrors([
+            'editing.name',
+            'editing.display_name',
+        ]);
 });

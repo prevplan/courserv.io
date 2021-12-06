@@ -7,7 +7,7 @@
                         <thead class="bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                {{ _i('name') }}
+                                {{ _i('team name') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 {{ _i('Display Name') }}
@@ -48,13 +48,13 @@
     </div>
     <form wire:submit.prevent="save">
         <x-modal.dialog wire:model.defer="showEditModal">
-            <x-slot name="title">Test Titel</x-slot>
+            <x-slot name="title">{{ _i('edit team') }}</x-slot>
             <x-slot name="content">
                 <div class="space-y-3">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <label for="name" class="block text-sm font-medium text-gray-700">{{ _i('team name') }}</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
-                            <input type="text" wire:model.lazy="editing.name" name="name" id="name" class="block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.name') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="Company Name" @error('editing.name') aria-invalid="true" aria-describedby="name-error" @enderror>
+                            <input type="text" wire:model.lazy="editing.name" name="{{ _i('team name') }}" id="name" class="lowercase block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.name') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="{{ _i('team name') }}" @error('editing.name') aria-invalid="true" aria-describedby="name-error" @enderror>
                             @error('editing.name')
                                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <!-- Heroicon name: solid/exclamation-circle -->
@@ -67,14 +67,14 @@
                         @error('editing.name')
                             <p class="mt-2 text-sm text-red-600" id="name-error">{{ $errors->first('editing.name') }}</p>
                         @else
-                            <p class="mt-2 text-xs text-gray-500" id="email-description">We'll only use this for spam.</p>
+                            <p class="mt-2 text-xs text-gray-500" id="email-description">{{ _i('The internal used team name.') }}</p>
                         @enderror
                     </div>
 
                     <div>
-                        <label for="display_name" class="block text-sm font-medium text-gray-700">{{ _i('Display Name') }}</label>
+                        <label for="display_name" class="block text-sm font-medium text-gray-700">{{ _i('Display Team Name') }}</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
-                            <input type="text" wire:model.lazy="editing.display_name" name="display_name" id="display_name" class="block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.display_name') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="Company Name" @error('editing.display_name') aria-invalid="true" aria-describedby="display_name-error" @enderror>
+                            <input type="text" wire:model.lazy="editing.display_name" name="display_name" id="display_name" class="block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.display_name') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="{{ _i('Display Team Name') }}" @error('editing.display_name') aria-invalid="true" aria-describedby="display_name-error" @enderror>
                             @error('editing.display_name')
                                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <!-- Heroicon name: solid/exclamation-circle -->
@@ -87,14 +87,14 @@
                         @error('editing.display_name')
                             <p class="mt-2 text-sm text-red-600" id="name-error">{{ $errors->first('editing.display_name') }}</p>
                         @else
-                            <p class="mt-2 text-xs text-gray-500" id="name-description">We'll only use this for much spam.</p>
+                            <p class="mt-2 text-xs text-gray-500" id="name-description">{{ _i('The displayed team name.') }}</p>
                         @enderror
                     </div>
 
                     <div>
                         <label for="description" class="block text-sm font-medium text-gray-700">{{ _i('Description') }}</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
-                            <textarea wire:model.lazy="editing.description" name="description" id="description" class="block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.display_name') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="Company Name" @error('editing.display_name') aria-invalid="true" aria-describedby="description-error" @enderror></textarea>
+                            <textarea wire:model.lazy="editing.description" name="description" id="description" class="block w-full pr-10 sm:text-sm rounded-md focus:ring-indigo-500 focus:border-indigo-500 block border-gray-300 @error('editing.description') border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 @enderror " placeholder="{{ _i('Description') }}" @error('editing.description') aria-invalid="true" aria-describedby="description-error" @enderror></textarea>
                             @error('editing.description')
                                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <!-- Heroicon name: solid/exclamation-circle -->
@@ -107,7 +107,7 @@
                         @error('editing.description')
                             <p class="mt-2 text-sm text-red-600" id="name-error">{{ $errors->first('editing.description') }}</p>
                         @else
-                            <p class="mt-2 text-xs text-gray-500" id="description-description">We'll only use this for spam.</p>
+                            <p class="mt-2 text-xs text-gray-500" id="description-description">{{ _i('A description for this team. (optional)') }}</p>
                         @enderror
                     </div>
                 </div>

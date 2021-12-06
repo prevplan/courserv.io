@@ -4,23 +4,24 @@ namespace App\Http\Livewire;
 
 use App\Models\Team as TeamModel;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class Team extends Component
 {
     use AuthorizesRequests;
 
-    public $teams;
-    public bool $showCreateModal = false;
     public bool $showEditModal = false;
+    public Collection $teams;
     public TeamModel $editing;
 
-    protected function rules()
+    protected function rules(): array
     {
         return [
             'editing.name' => 'required|unique:teams,name,' . optional($this->editing)->id,
-            'editing.display_name' => 'required',
+            'editing.display_name' => 'required|unique:teams,display_name,' . optional($this->editing)->id,
             'editing.description' => 'nullable',
         ];
     }
@@ -30,6 +31,9 @@ class Team extends Component
         $this->editing = $this->makeBlankTeam();
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function create()
     {
         $this->authorize('create', TeamModel::class);
@@ -40,6 +44,9 @@ class Team extends Component
         $this->showEditModal = true;
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function edit(TeamModel $team)
     {
         $this->authorize('update', $team);
@@ -50,6 +57,9 @@ class Team extends Component
         $this->showEditModal = true;
     }
 
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
@@ -64,6 +74,9 @@ class Team extends Component
         $this->showEditModal = false;
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function render()
     {
         $this->authorize('viewAny', TeamModel::class);
@@ -83,8 +96,14 @@ class Team extends Component
             ]);
     }
 
-    private function makeBlankTeam()
+    protected function makeBlankTeam(): TeamModel
     {
         return new TeamModel();
+    }
+
+    protected function prepareForValidation($attributes): array
+    {
+        $attributes['editing']['name'] = Str::slug($this->editing->name, '-');
+        return $attributes;
     }
 }
