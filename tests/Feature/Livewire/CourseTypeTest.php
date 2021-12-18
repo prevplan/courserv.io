@@ -12,7 +12,7 @@ beforeEach(function () {
     actingAs($this->user);
 });
 
-it('has course type page needs to be logedin', function () {
+it('has course type page which needs to be logged in', function () {
     $response = $this->get(route('coursetype'));
 
     $response->assertStatus(200);

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: courserv.io\n"
-"POT-Creation-Date: 2021-12-18 09:47+0100\n"
-"PO-Revision-Date: 2021-12-18 10:16+0100\n"
+"POT-Creation-Date: 2021-12-19 18:57+0100\n"
+"PO-Revision-Date: 2021-12-19 18:57+0100\n"
 "Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language: de\n"
@@ -56,12 +56,16 @@ msgid "team name"
 msgstr "Teamname"
 
 #: ../storage/framework/messages/36c0179b32fa6c30898bf46febebec2b3be3584f.php.php:14
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:14
 msgid "Display Name"
 msgstr "Angezeigter Name"
 
 #: ../storage/framework/messages/36c0179b32fa6c30898bf46febebec2b3be3584f.php.php:18
 #: ../storage/framework/messages/36c0179b32fa6c30898bf46febebec2b3be3584f.php.php:182
 #: ../storage/framework/messages/36c0179b32fa6c30898bf46febebec2b3be3584f.php.php:191
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:18
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:182
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:191
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -144,6 +148,11 @@ msgstr "UE / Tag"
 #: ../storage/framework/messages/523acf1afc7e16d7d823f7af2ec5eed5b6777b7b.php.php:68
 msgid "minutes"
 msgstr "Minuten"
+
+#: ../storage/framework/messages/523acf1afc7e16d7d823f7af2ec5eed5b6777b7b.php.php:82
+#: ../storage/framework/messages/c99f5590cf744b55b44a0f2e7d11a17eb6c30cb5.php.php:99
+msgid "edit"
+msgstr "bearbeiten"
 
 #: ../storage/framework/messages/523acf1afc7e16d7d823f7af2ec5eed5b6777b7b.php.php:105
 msgid "edit course type"
@@ -229,6 +238,49 @@ msgstr "Anmelden"
 msgid "e-mail address"
 msgstr "E-Mail-Adresse"
 
+#: ../storage/framework/messages/6261af2d5585b596c442511e8de6bb610c0d1999.php.php:7
+#: ../storage/framework/messages/8c00cf62098545a4bafd563e7a81993cb97baea9.php.php:7
+#: ../storage/framework/messages/c32efe71791a5da33c0fc4f6f38fc2f31af3253c.php.php:86
+#: Http/Livewire/Role.php:86
+msgid "Roles"
+msgstr "Rollen"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:10
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:86
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:88
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:95
+msgid "role name"
+msgstr "Rollennamne"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:27
+msgid "Add Role"
+msgstr "Rolle hinzufügen"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:82
+msgid "edit role"
+msgstr "Rolle bearbeiten"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:126
+msgid "The internal used role name."
+msgstr "Der intern verwendete Rollenname."
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:134
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:143
+msgid "Display role Name"
+msgstr "Angezeigter Name"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:174
+msgid "The displayed role name"
+msgstr "Der angezeigte Rollenname"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:222
+msgid "A description for this role (optional)"
+msgstr "Eine Beschreibung für diese Rolle (optional)"
+
+#: ../storage/framework/messages/be6505fbc11f6e8185a9cb7ab1ff64dfedcfe320.php.php:233
+msgid "Permissions"
+msgstr "Berechtigungen"
+
 #: ../storage/framework/messages/c99f5590cf744b55b44a0f2e7d11a17eb6c30cb5.php.php:13
 #: ../storage/framework/messages/ed332ebd47ba25bc141df69d92f906dfbd61238c.php.php:98
 #: Http/Livewire/Team.php:98
@@ -248,10 +300,6 @@ msgstr "aktiv"
 #: ../storage/framework/messages/c99f5590cf744b55b44a0f2e7d11a17eb6c30cb5.php.php:83
 msgid "inactive"
 msgstr "inaktiv"
-
-#: ../storage/framework/messages/c99f5590cf744b55b44a0f2e7d11a17eb6c30cb5.php.php:99
-msgid "edit"
-msgstr "bearbeiten"
 
 #: ../storage/framework/messages/c99f5590cf744b55b44a0f2e7d11a17eb6c30cb5.php.php:123
 msgid "edit user"
@@ -273,7 +321,7 @@ msgstr "Passwort zurücksetzen"
 msgid "Password repeat"
 msgstr "Passwort Wiederholung"
 
-#: ../storage/framework/messages/e38cd9d80b244cca9fe5cc31b33536d9c300a306.php.php:332
+#: ../storage/framework/messages/e38cd9d80b244cca9fe5cc31b33536d9c300a306.php.php:377
 msgid "Logout"
 msgstr "Ausloggen"
 

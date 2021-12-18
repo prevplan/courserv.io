@@ -96,6 +96,14 @@
                             <x-nav.user :active="$active" />
                         @endcan
 
+                        @can('viewAny', \App\Models\CourseType::class)
+                            <x-nav.coursetype :active="$active" />
+                        @endcan
+
+                        @can('viewAny', \App\Models\Role::class)
+                            <x-nav.role :active="$active" />
+                        @endcan
+
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
                             {{-- Heroicon name: outline/folder --}}
                             <svg class="text-gray-400 group-hover:text-gray-500 mr-4 shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -155,8 +163,12 @@
                             <x-nav.user-static :active="$active" />
                         @endcan
 
-                        @can('viewAny', \App\Models\User::class)
+                        @can('viewAny', \App\Models\CourseType::class)
                             <x-nav.coursetype-static :active="$active" />
+                        @endcan
+
+                        @can('viewAny', \App\Models\Role::class)
+                            <x-nav.role-static :active="$active" />
                         @endcan
 
                         <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
