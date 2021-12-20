@@ -246,16 +246,16 @@
         },
         {
             "name": "codezero/laravel-localized-routes",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codezero-be/laravel-localized-routes.git",
-                "reference": "61fac4ef4544e2bf97a212dda9cd2671e5f0fd72"
+                "reference": "1617291f4c2ffbf47c30f25b76ea37ca730dfb63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codezero-be/laravel-localized-routes/zipball/61fac4ef4544e2bf97a212dda9cd2671e5f0fd72",
-                "reference": "61fac4ef4544e2bf97a212dda9cd2671e5f0fd72",
+                "url": "https://api.github.com/repos/codezero-be/laravel-localized-routes/zipball/1617291f4c2ffbf47c30f25b76ea37ca730dfb63",
+                "reference": "1617291f4c2ffbf47c30f25b76ea37ca730dfb63",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
             ],
             "support": {
                 "issues": "https://github.com/codezero-be/laravel-localized-routes/issues",
-                "source": "https://github.com/codezero-be/laravel-localized-routes/tree/2.6.2"
+                "source": "https://github.com/codezero-be/laravel-localized-routes/tree/2.6.3"
             },
             "funding": [
                 {
@@ -321,7 +321,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2021-11-28T16:13:59+00:00"
+            "time": "2021-12-19T23:29:59+00:00"
         },
         {
             "name": "codezero/laravel-localizer",
