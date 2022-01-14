@@ -697,16 +697,16 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "47c53bbb260d3c398fba9bfa9683dcf67add2579"
+                "reference": "9545dea2a1d92b60c8b3d06f02025c83e999bde0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/47c53bbb260d3c398fba9bfa9683dcf67add2579",
-                "reference": "47c53bbb260d3c398fba9bfa9683dcf67add2579",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/9545dea2a1d92b60c8b3d06f02025c83e999bde0",
+                "reference": "9545dea2a1d92b60c8b3d06f02025c83e999bde0",
                 "shasum": ""
             },
             "require": {
@@ -746,7 +746,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
-                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.3"
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.4"
             },
             "funding": [
                 {
@@ -754,7 +754,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-06T05:35:07+00:00"
+            "time": "2022-01-13T04:09:37+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -8208,9 +8208,6 @@
             "require": {
                 "php": "^7.1 || ^8.0"
             },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
-            },
             "require-dev": {
                 "doctrine/collections": "^1.0",
                 "doctrine/common": "^2.6",
@@ -8621,20 +8618,20 @@
         },
         {
             "name": "pestphp/pest-plugin-laravel",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest-plugin-laravel.git",
-                "reference": "bacc1ef1f537cf9adf692b6930e54f607ae530ad"
+                "reference": "64996218006570f6f58f3c7ebb6f0c7bfb3c60b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-laravel/zipball/bacc1ef1f537cf9adf692b6930e54f607ae530ad",
-                "reference": "bacc1ef1f537cf9adf692b6930e54f607ae530ad",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-laravel/zipball/64996218006570f6f58f3c7ebb6f0c7bfb3c60b9",
+                "reference": "64996218006570f6f58f3c7ebb6f0c7bfb3c60b9",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0 || ^8.0",
+                "laravel/framework": "^7.0 || ^8.0 || ^9.0",
                 "pestphp/pest": "^1.7",
                 "php": "^7.3 || ^8.0"
             },
@@ -8671,11 +8668,11 @@
                 "unit"
             ],
             "support": {
-                "source": "https://github.com/pestphp/pest-plugin-laravel/tree/v1.1.0"
+                "source": "https://github.com/pestphp/pest-plugin-laravel/tree/v1.2.0"
             },
             "funding": [
                 {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
+                    "url": "https://www.paypal.com/paypalme/enunomaduro",
                     "type": "custom"
                 },
                 {
@@ -8687,7 +8684,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-07-07T09:11:42+00:00"
+            "time": "2022-01-13T17:09:04+00:00"
         },
         {
             "name": "pestphp/pest-plugin-livewire",
