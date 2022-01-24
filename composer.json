@@ -13,7 +13,7 @@
     "require": {
         "php": "^8.0",
         "codezero/laravel-localized-routes": "^2.6",
-        "danharrin/livewire-rate-limiting": "^0.3.0",
+        "danharrin/livewire-rate-limiting": "^1.0.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "itsgoingd/clockwork": "^5.1",
