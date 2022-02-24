@@ -21,7 +21,7 @@
         "php": "^8.0",
         "codezero/laravel-localized-routes": "^2.7",
         "danharrin/livewire-rate-limiting": "^1.0.0",
-        "fruitcake/laravel-cors": "^2.0.5",
+        "fruitcake/laravel-cors": "^3.0.0",
         "guzzlehttp/guzzle": "^7.4",
         "itsgoingd/clockwork": "^5.1",
         "laravel/framework": "^9.0",
