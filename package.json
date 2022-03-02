@@ -31,7 +31,7 @@
         "@hotwired/turbo": "^7.1.0",
         "alpinejs": "^3.9.0",
         "flatpickr": "^4.6.9",
-        "friendly-challenge": "^0.9.0",
+        "friendly-challenge": "^0.9.1",
         "turbolinks": "^5.2.0"
     }
 }
