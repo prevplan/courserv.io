@@ -5742,16 +5742,16 @@
         },
         {
             "name": "vinkla/hashids",
-            "version": "10.0.0",
+            "version": "10.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinkla/laravel-hashids.git",
-                "reference": "29e0efdfbeede589eb2ffc381da1bf8fd77a53e2"
+                "reference": "9dbcfc1b20ecc25e73bba6e8c724d1648fa15fdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/laravel-hashids/zipball/29e0efdfbeede589eb2ffc381da1bf8fd77a53e2",
-                "reference": "29e0efdfbeede589eb2ffc381da1bf8fd77a53e2",
+                "url": "https://api.github.com/repos/vinkla/laravel-hashids/zipball/9dbcfc1b20ecc25e73bba6e8c724d1648fa15fdd",
+                "reference": "9dbcfc1b20ecc25e73bba6e8c724d1648fa15fdd",
                 "shasum": ""
             },
             "require": {
@@ -5804,9 +5804,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vinkla/laravel-hashids/issues",
-                "source": "https://github.com/vinkla/laravel-hashids/tree/10.0.0"
+                "source": "https://github.com/vinkla/laravel-hashids/tree/10.0.1"
             },
-            "time": "2022-01-24T07:44:29+00:00"
+            "time": "2022-04-10T18:38:38+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9961,5 +9961,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
