@@ -7293,16 +7293,16 @@
         },
         {
             "name": "nunomaduro/larastan",
-            "version": "v2.1.4",
+            "version": "v2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/larastan.git",
-                "reference": "93722b81dff6322eaeb171564f18afc9dbbbd2b2"
+                "reference": "d0d5114e757f516bb2a2679ee03b7102db61d587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/93722b81dff6322eaeb171564f18afc9dbbbd2b2",
-                "reference": "93722b81dff6322eaeb171564f18afc9dbbbd2b2",
+                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/d0d5114e757f516bb2a2679ee03b7102db61d587",
+                "reference": "d0d5114e757f516bb2a2679ee03b7102db61d587",
                 "shasum": ""
             },
             "require": {
@@ -7318,7 +7318,7 @@
                 "mockery/mockery": "^1.4.4",
                 "php": "^8.0.2",
                 "phpmyadmin/sql-parser": "^5.5",
-                "phpstan/phpstan": "^1.4.7"
+                "phpstan/phpstan": "^1.7.0"
             },
             "require-dev": {
                 "nikic/php-parser": "^4.13.2",
@@ -7367,7 +7367,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/larastan/issues",
-                "source": "https://github.com/nunomaduro/larastan/tree/v2.1.4"
+                "source": "https://github.com/nunomaduro/larastan/tree/v2.1.6"
             },
             "funding": [
                 {
@@ -7387,7 +7387,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-03-30T14:23:50+00:00"
+            "time": "2022-05-23T20:17:50+00:00"
         },
         {
             "name": "pestphp/pest",
@@ -8128,16 +8128,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.6.2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "becb9603a31d70f5007d505877a7b812598dfe46"
+                "reference": "509b3d6da631de31494dc21adedb30d73970e5aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/becb9603a31d70f5007d505877a7b812598dfe46",
-                "reference": "becb9603a31d70f5007d505877a7b812598dfe46",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/509b3d6da631de31494dc21adedb30d73970e5aa",
+                "reference": "509b3d6da631de31494dc21adedb30d73970e5aa",
                 "shasum": ""
             },
             "require": {
@@ -8163,7 +8163,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.6.2"
+                "source": "https://github.com/phpstan/phpstan/tree/1.7.0"
             },
             "funding": [
                 {
@@ -8183,7 +8183,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-27T11:05:24+00:00"
+            "time": "2022-05-23T15:11:29+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
