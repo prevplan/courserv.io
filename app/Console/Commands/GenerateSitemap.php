@@ -40,7 +40,7 @@ class GenerateSitemap extends Command
 
         $updated_courses = $updated_courses->pluck('course_id')->unique();
 
-        if (!count($updated_courses)) {
+        if (! count($updated_courses)) {
             exit();
         }
 
@@ -75,19 +75,21 @@ class GenerateSitemap extends Command
             }
 
             // run for every course and price
-            foreach ($course->prices as $price) foreach ($locales as $locale) {
-                $url_course = Url::create(route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]));
-
-                $url_course->setLastModificationDate(Carbon::parse($course->updated_at));
-                $url_course->setPriority(0.5);
-
+            foreach ($course->prices as $price) {
                 foreach ($locales as $locale) {
-                    $url_course->addAlternate(route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]), $locale);
+                    $url_course = Url::create(route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]));
+
+                    $url_course->setLastModificationDate(Carbon::parse($course->updated_at));
+                    $url_course->setPriority(0.5);
+
+                    foreach ($locales as $locale) {
+                        $url_course->addAlternate(route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]), $locale);
+                    }
+
+                    $url_course->addAlternate(preg_replace('/\/' . app()->getLocale() . '\//', '/', route('booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)])), 'x-default');
+
+                    $sitemap_courses->add($url_course);
                 }
-
-                $url_course->addAlternate(preg_replace('/\/' . app()->getLocale() . '\//', '/', route('booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)])), 'x-default');
-
-                $sitemap_courses->add($url_course);
             }
         }
 
@@ -115,9 +117,13 @@ class GenerateSitemap extends Command
             $indexnow_urls = [];
 
             // generate changed links for indexnow.org
-            foreach ($courses as $course) foreach ($course->prices as $price) foreach ($locales as $locale) {
-                $indexnow_urls[] = route($locale . '.booking.overview', ['slug' => $course->type->slug, 'location' => $course->location]);
-                $indexnow_urls[] = route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]);
+            foreach ($courses as $course) {
+                foreach ($course->prices as $price) {
+                    foreach ($locales as $locale) {
+                        $indexnow_urls[] = route($locale . '.booking.overview', ['slug' => $course->type->slug, 'location' => $course->location]);
+                        $indexnow_urls[] = route($locale . '.booking', ['course' => Hashids::encode($course->id), 'price' => Hashids::encode($price->id)]);
+                    }
+                }
             }
 
             // tell indexnow.org the change
