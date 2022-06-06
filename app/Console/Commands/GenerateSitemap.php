@@ -124,7 +124,7 @@ class GenerateSitemap extends Command
             $response = Http::post('https://api.indexnow.org/indexnow', [
                 'host' => preg_replace('/[a-z]+:\/\//', '', config('app.url')),
                 'key' => config('services.indexnow.key'),
-                'urlList' => array_unique($indexnow_urls),
+                'urlList' => array_values(array_unique($indexnow_urls)),
             ]);
         }
 
