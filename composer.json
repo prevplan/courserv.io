@@ -15,7 +15,6 @@
     ],
     "require": {
         "php": "^8.0",
-        "codezero/laravel-localized-routes": "^2.7",
         "danharrin/livewire-rate-limiting": "^1.0.0",
         "fruitcake/laravel-cors": "^3.0.0",
         "guzzlehttp/guzzle": "^7.4",
@@ -24,6 +23,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.7",
+        "mcamara/laravel-localization": "^1.7",
         "santigarcor/laratrust": "^7.0",
         "spatie/laravel-sitemap": "^6.1",
         "vinkla/hashids": "^10.0",

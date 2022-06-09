@@ -27,6 +27,7 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
+        <server name="LOCALIZATION_HIDE_DEFAULT_LOCALE" value="true" />
         <env name="FRIENDLY_CAPTCHA_SECRET" value="XXX" />
         <env name="FRIENDLY_CAPTCHA_SITEKEY" value="XXX" />
     </php>

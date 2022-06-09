@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::localized(function () {
-    Route::middleware(\App\Http\Middleware\Localization::class)->group(function () {
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+        Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');
+
         Route::view('/', 'welcome');
 
         Route::get('login', \App\Http\Livewire\Auth\Login::class)
@@ -57,7 +62,6 @@ Route::localized(function () {
 
         Route::get('booking/{course}/{price}', \App\Http\Livewire\Booking::class)
             ->name('booking');
-    });
 });
 
 if (config('services.indexnow.key')) {
@@ -88,6 +92,3 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return redirect()->back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-Route::fallback(\CodeZero\LocalizedRoutes\Controller\FallbackController::class)
-    ->middleware(\CodeZero\LocalizedRoutes\Middleware\SetLocale::class);
