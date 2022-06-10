@@ -35,4 +35,3 @@ if (! function_exists('canonical_url')) {
         return LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), $current);
     }
 }
-
