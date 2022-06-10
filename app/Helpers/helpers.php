@@ -23,3 +23,16 @@ if (! function_exists('percentage')) {
         return $rest / $total * 100;
     }
 }
+
+if (! function_exists('canonical_url')) {
+    function canonical_url(): string
+    {
+        if (! \Illuminate\Support\Str::startsWith($current = url()->current(), config('app.url'))) {
+            // replace domain if it's not the configured one
+            $current = preg_replace('/^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)/', config('app.url'), $current);
+        }
+
+        return LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), $current);
+    }
+}
+
