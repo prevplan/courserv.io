@@ -15,7 +15,6 @@ use App\Models\CourseType as CourseTypeModel;
 use App\Models\Price as PriceModel;
 use App\Models\Team as TeamModel;
 use App\Models\TrainerDay;
-use App\Models\UpdatedCourse;
 use Carbon\Carbon;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -708,13 +707,6 @@ class Course extends Component
             ) {
                 event(new QsehCourseUpdated($this->editing));
             }
-        }
-
-        // for sitemap regenerate and information to the search engines
-        if ($this->editing->public_bookable) {
-            $updated = new UpdatedCourse();
-            $updated->course_id = $this->editing->id;
-            $updated->save();
         }
     }
 
