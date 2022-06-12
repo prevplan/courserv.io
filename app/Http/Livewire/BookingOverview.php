@@ -115,7 +115,10 @@ class BookingOverview extends Component
             'perimeter_locations' => $perimeter_locations,
             'courses' => $courses,
         ])
-            ->layout('layouts.booking');
+            ->layout('layouts.booking', [
+                'metaTitle' => $this->courseType . ' ' . (is_numeric($this->location) ? _i('near you') : _i('in %s and surroundings', $this->location)),
+                'index' => true,
+            ]);
     }
 
     public function perimeterSearch($lat, $lon, $max = 25)

@@ -190,6 +190,9 @@ class Booking extends Component
         return view('livewire.booking', [
             'course_data' => $course_data,
         ])
-            ->layout('layouts.booking', ['metaTitle' => _i('Book course')]);
+            ->layout('layouts.booking', [
+                'metaTitle' => _i('Book course'),
+                'index' => true,
+            ]);
     }
 }

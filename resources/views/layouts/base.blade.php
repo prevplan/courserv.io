@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @if(!$attributes['index'])
+        <meta name="robots" content="noindex">
+    @endif
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>{{ $attributes['metaTitle'] }} | {{ config('app.name') }}</title>
 
@@ -16,7 +19,7 @@
     @livewireStyles
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    @if(config('umami.url') && config('umami.id'))
+    @if(config('umami.url') && config('umami.id') && $attributes['umami'])
         <script async defer data-website-id="{{ config('umami.id') }}" src="{{ config('umami.url') }}"></script>
     @endif
 </head>

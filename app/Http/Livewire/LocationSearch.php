@@ -29,6 +29,8 @@ class LocationSearch extends Component
         $locations = Location::search(trim($this->term))->groupBy('location', 'state')->limit(5)->get();
 
         return view('livewire.location-search', [
+            'metaTitle' => $this->courseType . ' - ' . _i('our course dates at a glance'),
+            'index' => true,
             'locations' => $locations,
         ])
             ->layout('layouts.booking');

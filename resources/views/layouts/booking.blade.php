@@ -1,10 +1,12 @@
 @props([
 'metaTitle' => '',
+'index' => '',
+'umami' => true,
 'siteTitle',
 'active' => '',
 ])
 
-<x-layouts.base :metaTitle="$metaTitle">
+<x-layouts.base :metaTitle="$metaTitle" :index="$index" :umami="$umami">
 
     <div class="min-h-full">
         <div class="py-10">
