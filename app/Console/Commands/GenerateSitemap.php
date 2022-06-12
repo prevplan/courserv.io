@@ -155,10 +155,10 @@ class GenerateSitemap extends Command
         Http::get('https://www.google.com/ping?sitemap=' . config('app.url') . '/sitemap_past_courses.xml');
 
 
-        if (config('services.indexnow.key')) {
+        if (config('services.indexnow.key') && config('services.indexnow.url')) {
             $indexnow_urls = [];
 
-            // generate changed links for indexnow.org
+            // generate changed links for indexnow
             foreach ($yesterday_courses as $course) {
                 foreach ($course->prices as $price) {
                     foreach (LaravelLocalization::getSupportedLanguagesKeys() as $languagesKey) {
@@ -168,8 +168,8 @@ class GenerateSitemap extends Command
                 }
             }
 
-            // tell indexnow.org the change
-            $response = Http::post('https://api.indexnow.org/indexnow', [
+            // tell indexnow the change
+            $response = Http::post(config('services.indexnow.url'), [
                 'host' => preg_replace('/[a-z]+:\/\//', '', config('app.url')),
                 'key' => config('services.indexnow.key'),
                 'urlList' => array_values(array_unique($indexnow_urls)),
