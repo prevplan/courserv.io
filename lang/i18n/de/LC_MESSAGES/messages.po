@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: courserv.io\n"
-"POT-Creation-Date: 2022-06-10 20:43+0200\n"
-"PO-Revision-Date: 2022-06-10 20:45+0200\n"
+"POT-Creation-Date: 2022-06-12 14:06+0200\n"
+"PO-Revision-Date: 2022-06-12 14:06+0200\n"
 "Last-Translator: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language-Team: Holger Schmermbeck <hosch@mailbox.org>\n"
 "Language: de\n"
@@ -163,8 +163,8 @@ msgstr ""
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../storage/framework/messages/11f4bd005efe0d13d42bf681d94eb9c76538f47a.php.php:193
-#: Http/Livewire/Booking.php:193
+#: ../storage/framework/messages/11f4bd005efe0d13d42bf681d94eb9c76538f47a.php.php:199
+#: Http/Livewire/Booking.php:199
 msgid "Book course"
 msgstr "Kurs buchen"
 
@@ -440,6 +440,12 @@ msgstr "Ergebnissen"
 msgid "Go to page :page"
 msgstr "Weiter zur Seite :page"
 
+#: ../storage/framework/messages/3480e3e780a59879152c23b35effb2d339bfae70.php.php:32
+#: ../storage/framework/messages/8aca09ec4e2e9790a45abe6bf1054739e0a7e434.php.php:5
+#: Http/Livewire/LocationSearch.php:32
+msgid "our course dates at a glance"
+msgstr "unsere Kurstermine im Überblick"
+
 #: ../storage/framework/messages/49daf884bf1be731e5eb446e599d2b84f3aa0ee0.php.php:13
 msgid "contact person"
 msgstr "Ansprechpartner*in"
@@ -663,8 +669,8 @@ msgstr ""
 "eine E-Mail mit weiteren Informationen geschickt."
 
 #: ../storage/framework/messages/49daf884bf1be731e5eb446e599d2b84f3aa0ee0.php.php:711
-msgid "Course booked out"
-msgstr "Kurs ausgebucht"
+msgid "Booking not possible"
+msgstr "Buchung nicht möglich"
 
 #: ../storage/framework/messages/49daf884bf1be731e5eb446e599d2b84f3aa0ee0.php.php:716
 msgid "Unfortunately, booking this course is no longer possible."
@@ -701,6 +707,19 @@ msgstr[1] ""
 msgid "Captcha not solved!"
 msgstr "Captcha nicht gelöst!"
 
+#: ../storage/framework/messages/50bc701a2d9b13dd18c10bee52c210087df97fde.php.php:119
+#: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:6
+#: Http/Livewire/BookingOverview.php:119
+msgid "near you"
+msgstr "in Ihrer Nähe"
+
+#: ../storage/framework/messages/50bc701a2d9b13dd18c10bee52c210087df97fde.php.php:119
+#: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:6
+#: Http/Livewire/BookingOverview.php:119
+#, php-format
+msgid "in %s and surroundings"
+msgstr "in %s und Umgebung"
+
 #: ../storage/framework/messages/5398aa3eed4e1645745473078913123fb5095ce6.php.php:10
 #: ../storage/framework/messages/997b8850e277be961cf78993a62b2d94ab15727f.php.php:10
 #: ../storage/framework/messages/ad551370f2e460d6e9303d25d7e7333e0f3f6f2e.php.php:251
@@ -713,10 +732,6 @@ msgstr "Rollen"
 #: ../storage/framework/messages/640b865a692c97e45c7b3bf75af96f9efd19524d.php.php:259
 msgid "Logout"
 msgstr "Ausloggen"
-
-#: ../storage/framework/messages/8aca09ec4e2e9790a45abe6bf1054739e0a7e434.php.php:5
-msgid "our course dates at a glance"
-msgstr "unsere Kurstermine im Überblick"
 
 #: ../storage/framework/messages/8aca09ec4e2e9790a45abe6bf1054739e0a7e434.php.php:6
 msgid "Find your course near you here"
@@ -925,15 +940,6 @@ msgstr "maximale Plätze"
 #: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:5
 msgid "Course overview"
 msgstr "Kursübersicht"
-
-#: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:6
-msgid "near you"
-msgstr "in Ihrer Nähe"
-
-#: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:6
-#, php-format
-msgid "in %s and surroundings"
-msgstr "in %s und Umgebung"
 
 #: ../storage/framework/messages/ac12114404b7be321e45041c9a5ff27339cd94a2.php.php:37
 msgid "free seats"
@@ -1162,6 +1168,9 @@ msgstr "Impressum"
 #: ../storage/framework/messages/fef96d4da00e7a16d5cb96ffbab3099df7723769.php.php:27
 msgid "privacy"
 msgstr "Datenschutz"
+
+#~ msgid "Course booked out"
+#~ msgstr "Kurs ausgebucht"
 
 #, php-format
 #~ msgid ""

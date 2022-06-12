@@ -425,7 +425,7 @@
     </div>
 
     <div>
-        @if(($course_data->seats - $course_data->participants_count) < 1 && !$bookingSuccessful) {{-- course is booked out and seat isn't already booked --}}
+        @if(($course_data->seats - $course_data->participants_count) < 1 && !$bookingSuccessful || $course_data->cancelled || $course_data->start < Carbon\Carbon::now()) {{-- the booking isn't possible anymore --}}
             <div class="relative z-10" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
                 <div x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on modal state." class="fixed inset-0 bg-gray-500 transition-opacity"></div>
 
@@ -443,7 +443,7 @@
                                 </div>
                                 <div class="mt-3 text-center sm:mt-5">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                                        {{ _i('Course booked out') }}
+                                        {{ _i('Booking not possible') }}
                                     </h3>
                                     <div class="mt-2">
                                         <p class="text-sm text-gray-500">
@@ -497,7 +497,7 @@
       "description": "{{ $course_data->prices[0]->description }}",
       "startDate": "{{ \Carbon\Carbon::parse($course_data->start)->isoFormat('YYYY-MM-DDTHH:mm') }}",
       "endDate": "{{ \Carbon\Carbon::parse($course_data->end)->isoFormat('YYYY-MM-DDTHH:mm') }}",
-      "eventStatus": "https://schema.org/EventScheduled",
+      "eventStatus": "{{ $course_data->cancelled ? 'https://schema.org/EventCancelled' : 'https://schema.org/EventScheduled' }}",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
@@ -527,7 +527,7 @@
                 "priceCurrency": "{{ $course_data->prices[0]->currency }}",
                 "validFrom": "{{ \Carbon\Carbon::parse($course_data->created_at)->isoFormat('YYYY-MM-DD') }}",
                 "url": "{{ route('booking', ['course' => Hashids::encode($course_data->id), 'price' => Hashids::encode($course_data->prices[0]->id)]) }}",
-                "availability": "{{ ($course_data->seats - $course_data->participants_count) - count($participants) > 0 ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut' }}"
+                "availability": "{{ ($course_data->seats - $course_data->participants_count) - count($participants) <= 0 || $course_data->cancelled ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' }}"
             }
         ]
     }

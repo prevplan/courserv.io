@@ -169,8 +169,8 @@ class Booking extends Component
     public function render()
     {
         $course_data = Course::where('id', '=', Hashids::decode($this->course))
-            ->where('cancelled', '=', null)
             ->where('public_bookable', '=', 1)
+            ->where('start', '>', Carbon::now()->subDays(31))
             ->whereRelation('prices', 'id', '=', Hashids::decode($this->price))
             ->with('type')
             ->with(['prices' => fn ($query) => $query->where('id', '=', Hashids::decode($this->price))])
@@ -178,7 +178,7 @@ class Booking extends Component
                     $query->where('id', '=', Hashids::decode($this->price));
                 })
             ->withCount(['participants' => fn ($query) => $query->where('cancelled', 0)])
-            ->first();
+            ->firstOrFail();
 
         $prices = $course_data->relationsToArray()['prices'][0];
 
@@ -187,12 +187,18 @@ class Booking extends Component
             $this->payment = array_key_first(unserialize($prices['payment']));
         }
 
+        $index = true;
+
+        if ($course_data['start'] < Carbon::now()) { // meta noindex if the course start is in the past
+            $index = false;
+        }
+
         return view('livewire.booking', [
             'course_data' => $course_data,
         ])
             ->layout('layouts.booking', [
                 'metaTitle' => _i('Book course'),
-                'index' => true,
+                'index' => $index,
             ]);
     }
 }
