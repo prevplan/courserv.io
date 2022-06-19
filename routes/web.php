@@ -21,8 +21,6 @@ Route::group(
     ], function(){
         Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');
 
-        Route::view('/', 'welcome');
-
         Route::get('login', \App\Http\Livewire\Auth\Login::class)
             ->middleware('guest')
             ->name('login');
@@ -73,6 +71,10 @@ if (config('services.indexnow.key')) {
         abort(404);
     });
 }
+
+Route::get('/', function () {
+    return redirect(config('app.redirect'));
+});
 
 Route::get('coordinates', [App\Http\Controllers\CoordinatesController::class, 'import']);
 Route::get('locations', [App\Http\Controllers\CoordinatesController::class, 'locations']);

@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'redirect' => env('STARTPAGE_REDIRECT_URL', 'https://courserv.io'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
