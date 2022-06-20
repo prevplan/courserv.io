@@ -21,6 +21,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Vinkla\Hashids\Facades\Hashids;
 
 /**
  * @property mixed $rows
@@ -423,6 +424,11 @@ class Course extends Component
         } else {
             $this->courseDays = [];
         }
+    }
+
+    public function participant($course)
+    {
+        return $this->redirect(route('participant.course', ['course' => Hashids::encode($course)]));
     }
 
     public function create()

@@ -79,6 +79,27 @@ class PermissionSeeder extends Seeder
         ]);
 
         Permission::create([
+            'name' => 'participant.create',
+            'display_name' => 'Create Participant',
+            'description' => 'create a new participant',
+            'group' => 'participants',
+        ]);
+
+        Permission::create([
+            'name' => 'participant.view',
+            'display_name' => 'View Participant',
+            'description' => 'can see the participant',
+            'group' => 'participants',
+        ]);
+
+        Permission::create([
+            'name' => 'participant.update',
+            'display_name' => 'Edit Participant',
+            'description' => 'can edit a participant',
+            'group' => 'participants',
+        ]);
+
+        Permission::create([
             'name' => 'courseType.create',
             'display_name' => 'Create Course Type',
             'description' => 'create a new course type',

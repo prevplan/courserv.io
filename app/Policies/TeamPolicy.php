@@ -13,10 +13,10 @@ class TeamPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         if (! $user->isAbleTo('team.*')) {
             foreach ($user->teams()->pluck('id') as $team_id) {
@@ -34,10 +34,10 @@ class TeamPolicy
     /**
      * Determine whether the user can view every models.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return bool
      */
-    public function viewEvery(User $user)
+    public function viewEvery(User $user): bool
     {
         return $user->isAbleTo('team.view');
     }
@@ -45,8 +45,8 @@ class TeamPolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Team  $team
+     * @param User $user
+     * @param Team $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
 //    public function view(User $user, Team $team)
@@ -57,10 +57,10 @@ class TeamPolicy
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return $user->isAbleTo('team.create');
     }
@@ -68,11 +68,11 @@ class TeamPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @param User $user
+     * @param Team $team
+     * @return bool
      */
-    public function update(User $user, Team $team)
+    public function update(User $user, Team $team): bool
     {
         if ($user->isAbleTo('team.update') || $user->isAbleTo('team.update', $team)) {
             return true;
@@ -84,8 +84,8 @@ class TeamPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Team  $team
+     * @param User $user
+     * @param Team $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
 //    public function delete(User $user, Team $team)
@@ -96,8 +96,8 @@ class TeamPolicy
     /**
      * Determine whether the user can restore the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Team  $team
+     * @param User $user
+     * @param Team $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
 //    public function restore(User $user, Team $team)
@@ -108,8 +108,8 @@ class TeamPolicy
     /**
      * Determine whether the user can permanently delete the model.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Team  $team
+     * @param User $user
+     * @param Team $team
      * @return \Illuminate\Auth\Access\Response|bool
      */
 //    public function forceDelete(User $user, Team $team)

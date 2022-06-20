@@ -16,7 +16,7 @@ class PricePolicy
      * @param User $user
      * @return bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         if (! $user->isAbleTo('price.*')) {
             foreach ($user->teams()->pluck('id') as $team_id) {
@@ -37,7 +37,7 @@ class PricePolicy
      * @param User $user
      * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         if (! $user->isAbleTo('price.create')) {
             foreach ($user->teams()->pluck('id') as $team_id) {
@@ -59,7 +59,7 @@ class PricePolicy
      * @param Price $price
      * @return bool
      */
-    public function update(User $user, Price $price)
+    public function update(User $user, Price $price): bool
     {
         if (! $user->isAbleTo('price.update')) {
             foreach ($user->teams()->pluck('id') as $price) {

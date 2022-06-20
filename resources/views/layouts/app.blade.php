@@ -40,6 +40,10 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
                                 <x-nav.course-static :active="$active" />
                             @endcan
 
+                            @can('viewAny', \App\Models\Participant::class)
+                                <x-nav.participant-static :active="$active" />
+                            @endcan
+
                             @can('viewAny', \App\Models\Team::class)
                                 <x-nav.teams-static :active="$active" />
                             @endcan
@@ -112,6 +116,10 @@ Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class
 
                     @can('viewAny', \App\Models\Course::class)
                         <x-nav.course :active="$active" />
+                    @endcan
+
+                    @can('viewAny', \App\Models\Participant::class)
+                        <x-nav.participant :active="$active" />
                     @endcan
 
                     @can('viewAny', \App\Models\Team::class)

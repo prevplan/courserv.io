@@ -40,6 +40,12 @@ Route::group(
         Route::get('course', \App\Http\Livewire\Course::class)
             ->name('course');
 
+        Route::get('participant/{course}', \App\Http\Livewire\CourseParticipant::class)
+            ->name('participant.course');
+
+        Route::get('participant', \App\Http\Livewire\Participant::class)
+            ->name('participant');
+
         Route::get('roles', \App\Http\Livewire\Role::class)
             ->name('roles');
 

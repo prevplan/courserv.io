@@ -24,13 +24,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $rating
  * @property string|null $payee
  * @property int $participated
- * @property string $price
+ * @property string $price_net
+ * @property string $price_gross
+ * @property string $currency
+ * @property string $payment
  * @property int $price_id
  * @property int $payed
  * @property string|null $transaction_id
  * @property int $cancelled
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Course $course
  * @method static \Illuminate\Database\Eloquent\Builder|Participant newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Participant newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Participant query()
@@ -39,6 +43,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereContactId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereCourseId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereDateOfBirth($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereEmailReminder($value)
@@ -49,23 +54,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereParticipated($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePayed($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePayee($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePayment($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePriceGross($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePriceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePriceNet($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereRating($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereStreet($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereTransactionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Participant whereZipcode($value)
- * @property string $price_net
- * @property string $price_gross
- * @property string $currency
- * @property string $payment
- * @property-read \App\Models\Course $course
- * @method static \Illuminate\Database\Eloquent\Builder|Participant whereCurrency($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePayment($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePriceGross($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Participant wherePriceNet($value)
  * @mixin \Eloquent
  */
 class Participant extends Model
@@ -94,5 +92,10 @@ class Participant extends Model
     public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Course::class);
+    }
+
+    public function trainer(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(TrainerDay::class);
     }
 }

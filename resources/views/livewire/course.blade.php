@@ -87,6 +87,7 @@
                     @endif
                     <x-table.heading sortable multi-column wire:click="sortBy('team_id')" :direction="$sorts['team_id'] ?? null">{{ _i('team') }}</x-table.heading>
                     <x-table.heading></x-table.heading>
+                    <x-table.heading></x-table.heading>
                 </x-slot>
 
                 <x-slot name="body">
@@ -106,6 +107,11 @@
                                 </div>
                             @endif
                             <x-table.cell>{{ $course->team->display_name }}</x-table.cell>
+                            <x-table.cell>
+                                @can('update', $course)
+                                    <x-button.link wire:click="participant({{ $course->id }})">{{ _i('participants') }}</x-button.link>
+                                @endcan
+                            </x-table.cell>
                             <x-table.cell>
                                 @can('update', $course)
                                     <x-button.link wire:click="edit({{ $course->id }})">{{ _i('edit') }}</x-button.link>
